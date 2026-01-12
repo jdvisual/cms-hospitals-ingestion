@@ -1,0 +1,25 @@
+CMS Hospitals Ingestion — Sample Output
+
+Metastore endpoint:
+https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items
+
+Header normalization example:
+Before: Patients’ rating of the facility linear mean score
+After : patients_rating_of_the_facility_linear_mean_score
+
+Run command:
+python cms_hospitals/cms_hospitals_job.py
+
+Outputs:
+- Raw CSVs:        cms_hospitals/output/raw/
+- Processed CSVs:  cms_hospitals/output/processed/
+- Run reports:     cms_hospitals/output/reports/
+- State DB:        state.db
+
+Example run summary:
+Run summary (local test on 2026-01-12):
+
+Last successful run (UTC): None (first run)
+Found 69 Hospitals CSV distributions; 69 downloaded this run.
+Run summary: OK=69 ERROR=0
+Run report: cms_hospitals/output/reports/run_3_20260112_172045.json
