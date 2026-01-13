@@ -105,7 +105,8 @@ The job can be run locally on any standard Windows or Linux machine with Python 
 git clone https://github.com/jdvisual/cms-hospitals-ingestion.git
 cd cms-hospitals-ingestion
 
-create enviornment
+### 2. create enviornm
+ ```bash
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 
