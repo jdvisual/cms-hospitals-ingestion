@@ -72,3 +72,12 @@ Parallelism is applied to network and file I/O to improve throughput. CSV files 
 ### Explicit Schema Normalization
 Column headers are normalized deterministically to `snake
 
+---
+
+## Concurrency and SQLite Issue Encountered
+
+### The Issue
+During development, an issue was encountered when combining parallel file processing with SQLite state tracking. SQLite connections are, by default, restricted to the thread in which they are created. When worker threads attempted to write dataset state directly to SQLite, the following error occurred:
+
+   sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread
+
