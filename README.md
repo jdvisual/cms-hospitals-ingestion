@@ -14,6 +14,6 @@ This project implements a portable, production-ready Python job that programmati
 
 **CMS Provider Data Metastore (Dataset Catalog)**  
 https://data.cms.gov/provider-data/api/1/metastore/schemas/dataset/items
-
+This API provides metadata for all CMS Provider Data datasets, including dataset identifiers, dataset themes, last-modified dates, and downloadable CSV distributions. The job uses this endpoint at runtime to dynamically discover all datasets associated with the **Hospitals** theme.
 
 
