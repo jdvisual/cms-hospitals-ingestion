@@ -38,6 +38,7 @@ Eligible datasets are downloaded and processed in parallel using a thread pool. 
 
 ### 5. Column Header Normalization
 For each CSV file, the header row is rewritten by converting mixed-case column names, spaces, and special characters into standardized `snake_case` column names while preserving all row data.
+
 **Example:**
 Patients’ rating of the facility linear mean score → patients_rating_of_the_facility_linear_mean_score
 
