@@ -103,14 +103,26 @@ The job can be run locally on any standard **Windows or Linux** machine with **P
 ```bash
 git clone https://github.com/jdvisual/cms-hospitals-ingestion.git
 cd cms-hospitals-ingestion
+```
+### 2. Create and activate a virtual environment
+
+Windows (PowerShell):
+```bash
+git clone https://github.com/jdvisual/cms-hospitals-ingestion.git
+cd cms-hospitals-ingestion
+```
+ 
 
 
 ### 1. Clone the repository
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+git clone https://github.com/jdvisual/cms-hospitals-ingestion.git
+cd cms-hospitals-ingestion
+```
+### 1. Clone the repository
 
-
-
-
+```bash
+git clone https://github.com/jdvisual/cms-hospitals-ingestion.git
+cd cms-hospitals-ingestion
+```0
