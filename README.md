@@ -117,15 +117,13 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### 1. Clone the repository
+### 3. Install dependencies
 
 ```bash
-git clone https://github.com/jdvisual/cms-hospitals-ingestion.git
-cd cms-hospitals-ingestion
+pip install -r requirements.txt
 ```
-### 1. Clone the repository
+### 4. Run the job
 
 ```bash
-git clone https://github.com/jdvisual/cms-hospitals-ingestion.git
-cd cms-hospitals-ingestion
-```0
+python cms_hospitals/cms_hospitals_job.py
+```
