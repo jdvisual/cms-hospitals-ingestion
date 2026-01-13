@@ -81,3 +81,32 @@ During development, an issue was encountered when combining parallel file proces
 
    sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread
 
+This behavior is expected and commonly encountered when using SQLite in multi-threaded applications.
+
+### Resolution
+To resolve this cleanly and safely, the design was adjusted so that:
+- Worker threads perform only network I/O and file processing
+- All SQLite reads and writes occur exclusively in the main thread
+
+Each worker thread returns a structured result object describing its outcome. The main thread consumes these results and performs all database updates sequentially.
+
+### Outcome
+This approach preserves parallelism where it provides the most benefit (network and file I/O) while ensuring deterministic, reliable state management. It avoids the need for complex locking, thread-safe connection configurations, or external database services and is well-suited for SQLite-backed batch jobs.
+
+   
+---
+
+## How to Run
+
+The job can be run locally on any standard Windows or Linux machine with Python 3.9+ installed.
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/jdvisual/cms-hospitals-ingestion.git
+cd cms-hospitals-ingestion
+
+create enviornment
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+
