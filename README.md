@@ -110,12 +110,11 @@ Windows (PowerShell):
 ```bash
 python -m venv .venv
 .\.venv\S
-
-Linux
+```
+Linux/Mac OS
 ```bash
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-cripts\Activate.ps1
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
 ### 1. Clone the repository
