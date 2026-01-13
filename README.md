@@ -101,12 +101,14 @@ This approach preserves parallelism where it provides the most benefit (network 
 The job can be run locally on any standard Windows or Linux machine with Python 3.9+ installed.
 
 ### 1. Clone the repository
-
+'''
  git clone https://github.com/jdvisual/cms-hospitals-ingestion.git
 cd cms-hospitals-ingestion
-
+'''
 ### 2. create virtual environment
+'''
 python -m venv .venv
+
 .\.venv\Scripts\Activate.ps1
 
-
+'''
