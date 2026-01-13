@@ -38,7 +38,21 @@ Eligible datasets are downloaded and processed in parallel using a thread pool. 
 
 ### 5. Column Header Normalization
 For each CSV file, the header row is rewritten by converting mixed-case column names, spaces, and special characters into standardized `snake_case` column names while preserving all row data.
-
 **Example:**
 Patients’ rating of the facility linear mean score → patients_rating_of_the_facility_linear_mean_score
+
+### 6. Output Artifact Generation
+For each processed dataset, the job produces:
+- A processed CSV file with normalized headers  
+- A JSON header-mapping file showing original → normalized column names  
+
+### 7. State Persistence
+After each dataset completes processing, the main thread records dataset metadata, timestamps, and processing status in a local SQLite database to support future incremental runs.
+
+### 8. Run Reporting
+At the end of each execution, the job writes a per-run JSON report summarizing execution metadata, dataset counts, success and error status, and output artifact locations.
+
+### 9. Daily Scheduling Compatibility
+The job is designed to run daily using standard system schedulers such as **cron** (Linux) or **Task Scheduler** (Windows). Incremental logic ensures that only newly modified datasets are processed on subsequent runs.
+
 
