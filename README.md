@@ -56,4 +56,19 @@ At the end of each execution, the job writes a per-run JSON report summarizing e
 ### 9. Daily Scheduling Compatibility
 The job is designed to run daily using standard system schedulers such as **cron** (Linux) or **Task Scheduler** (Windows). Incremental logic ensures that only newly modified datasets are processed on subsequent runs.
 
+---
+
+## Design Decisions
+
+### Metastore-Driven Discovery
+Dataset URLs are not hardcoded. Instead, the job dynamically queries the CMS Provider Data metastore API at runtime. This allows the pipeline to automatically adapt to newly added datasets, removed datasets, or changes in download URLs without requiring code changes.
+
+### Incremental Processing with Persistent State
+A local SQLite database is used to persist run and dataset metadata across executions. This enables safe daily scheduling, clean restarts after failures, and efficient incremental processing. SQLite was chosen for its portability, reliability, and zero external service dependencies.
+
+### Parallel I/O with Streaming Processing
+Parallelism is applied to network and file I/O to improve throughput. CSV files are streamed row-by-row rather than loaded entirely into memory, making the solution safe for large datasets and constrained environments.
+
+### Explicit Schema Normalization
+Column headers are normalized deterministically to `snake
 
