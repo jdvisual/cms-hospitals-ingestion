@@ -108,11 +108,15 @@ cd cms-hospitals-ingestion
 
 Windows (PowerShell):
 ```bash
-git clone https://github.com/jdvisual/cms-hospitals-ingestion.git
-cd cms-hospitals-ingestion
-```
- 
+python -m venv .venv
+.\.venv\S
 
+Linux
+```bash
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+cripts\Activate.ps1
+```
 
 ### 1. Clone the repository
 
