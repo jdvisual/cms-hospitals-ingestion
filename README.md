@@ -1,9 +1,9 @@
 # CMS Hospitals Provider Data Ingestion
 
 This repository contains a Python job that incrementally discovers, downloads, and processes **CMS Provider Data** datasets related to the **Hospitals** theme. The job queries the official CMS Provider Data metastore API, downloads CSV distributions in parallel, normalizes all column headers to `snake_case`, and persists execution state locally to support reliable daily runs.
-
-The solution is designed to run on a standard Windows or Linux machine, avoids cloud-specific tooling, and uses minimal external dependencies.
 ---
+The solution is designed to run on a standard Windows or Linux machine, avoids cloud-specific tooling, and uses minimal external dependencies.
+
 
 ## Requirements
 
